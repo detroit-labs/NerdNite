@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageHeader"
+                android:minHeight="200dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/titleImage"
+                    android:scaleType="centerCrop"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/headerTitle"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/shape_title_square"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/imageHeader"
+                android:background="#fff"
+                android:id="@+id/body"
+                android:paddingTop="@dimen/next_event_social_header_half_height">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/eventTitleContainer"
+                    android:paddingLeft="@dimen/next_event_padding"
+                    android:paddingRight="@dimen/next_event_padding">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:id="@+id/topicText"
+                        android:textColor="@color/nn_yellow"
+                        android:text="#topic"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/dateText"
+                        android:textColor="@color/charcoal"
+                        android:text="#date"/>
+
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/locationTextContainer">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/next_event_location_at"
+                            android:id="@+id/locationAt"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/locationTextContainer"
+                            android:layout_marginLeft="4dp"
+                            android:text="location"
+                            android:textColor="@color/charcoal"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/speakerRow"
+                    android:weightSum="2"
+                    android:layout_below="@+id/eventTitleContainer"
+                    android:layout_marginTop="10dp">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/speakerPics"
+                        android:layout_margin="@dimen/next_event_padding"
+                        android:orientation="horizontal">
+                </LinearLayout>
+
+                <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/next_event_padding"
+                        android:id="@+id/learnMore"
+                        android:background="@drawable/selector_learn_more_bg"
+                        android:clickable="true">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/learn_more"
+                            android:id="@+id/textView"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/nn_yellow"
+                            android:textSize="18sp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/speakerRow"
+                    android:weightSum="2"
+                    android:id="@+id/lastNextContainer"
+                    android:layout_marginTop="10dp">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:id="@+id/previousEventsButton"
+                        android:clickable="true"
+                        android:background="@drawable/selector_nn_yellow_bg">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/previous"
+                                android:id="@+id/previous"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/events"
+                                android:id="@+id/events1"
+                                android:layout_below="@+id/previous"
+                                android:layout_marginTop="3dp"
+                                android:layout_alignLeft="@+id/previous"
+                                android:textColor="@color/nn_dark_yellow"
+                                android:textSize="20sp"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:id="@+id/upcomingEventsButton"
+                        android:clickable="true"
+                        android:background="@drawable/selector_dark_yellow_bg">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/upcoming"
+                                android:id="@+id/upcoming"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/events"
+                                android:id="@+id/events2"
+                                android:layout_below="@+id/upcoming"
+                                android:layout_marginTop="3dp"
+                                android:layout_alignLeft="@+id/upcoming"
+                                android:textColor="@color/nn_yellow"
+                                android:textSize="20sp"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/aboutContainer"
+                    android:layout_below="@+id/lastNextContainer"
+                    android:layout_marginTop="3dp">
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/aboutImageHeader"
+                        android:scaleType="fitXY"/>
+
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/aboutTitle"
+                        android:padding="@dimen/next_event_padding">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/est"
+                            android:id="@+id/est"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/nn_brown"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="date"
+                            android:id="@+id/date"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/nn_brown"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="About NN"
+                            android:id="@+id/aboutRectangle"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/shape_rectangle_about_title"
+                            android:textColor="@color/nn_brown"
+                            android:textSize="32sp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/aboutDescription">
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/bossContainer"
+                        android:padding="@dimen/next_event_padding">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/meet_the_bosses"
+                            android:id="@+id/meetTheBosses"
+                            android:textColor="@color/nn_dark_yellow"
+                            android:textSize="22sp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/next_event_social_header_height"
+                android:id="@+id/socialHeader"
+                android:layout_below="@+id/imageHeader"
+                android:layout_marginTop="-35dp"
+                >
+
+            <ImageButton
+                    android:layout_width="@dimen/next_event_social_button_width"
+                    android:layout_height="@dimen/next_event_social_button_width"
+                    android:id="@+id/twitterButton"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/twitter"
+                    android:background="@null"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="@dimen/next_event_padding"/>
+
+            <ImageButton
+                    android:layout_width="@dimen/next_event_social_button_width"
+                    android:layout_height="@dimen/next_event_social_button_width"
+                    android:id="@+id/facebookButton"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/twitterButton"
+                    android:src="@drawable/facebook"
+                    android:background="@null"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="5dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/next_event_string"
+                    android:id="@+id/nextEventTab"
+                    android:background="#FFF"
+                    android:padding="@dimen/next_event_padding"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignBaseline="@+id/facebookButton"
+                    android:textSize="18sp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
