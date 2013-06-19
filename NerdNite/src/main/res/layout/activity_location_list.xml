@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"
+    android:id="@+id/locationListRoot"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="40dp" >
+
+    <ImageView
+        android:id="@+id/locationNNLogo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/logo" />
+
+    <ListView
+        android:divider="@color/grey"
+        android:dividerHeight="2dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:id="@+id/locationList"
+        android:layout_above="@+id/locationNNLogo"
+        android:layout_below="@+id/selectALocation"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/selectALocation"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:text="@string/select_a_location"
+        android:textColor="@color/white"
+        android:textSize="28sp" />
+
+</RelativeLayout>

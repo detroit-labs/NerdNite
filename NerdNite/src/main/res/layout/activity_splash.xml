@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"
+    android:id="@+id/rootSplash"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" >
+
+    <TextView
+        android:id="@+id/splashTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:text="@string/splash_title"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/splashSlogan"
+        android:layout_below="@+id/sunglasses"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:text="@string/be_there"
+        android:textColor="@color/nn_yellow"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/vCenter"
+        android:layout_centerVertical="true"
+        android:layout_height="0dp"
+        android:layout_width="match_parent" >
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/sunglasses"
+        android:layout_below="@+id/vCenter"
+        android:layout_centerHorizontal="true"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="50dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/x" />
+
+</RelativeLayout>

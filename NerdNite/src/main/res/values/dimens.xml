@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="next_event_social_header_height">70dp</dimen>
+    <dimen name="next_event_social_header_half_height">35dp</dimen>
+    <dimen name="next_event_social_button_width">40dp</dimen>
+    <dimen name="next_event_padding">10dp</dimen>
+    <dimen name="title_square_padding">25dp</dimen>
+    <dimen name="about_rectangle_top_bottom_padding">10dp</dimen>
+    <dimen name="about_rectangle_left_right_padding">20dp</dimen>
+</resources>

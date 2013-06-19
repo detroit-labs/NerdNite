@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.4.2'
+    }
+}
+
+apply plugin: 'android'
+
+File aptOutput = file("${project.projectDir}/src/main/src_annotations")
+File aptDelete = file("${project.projectDir}/src/main/src_annotations/com")
+
+repositories{
+    maven {
+        url "http://macmini.detroitlabs.com:8081/nexus/content/repositories/thirdparty"
+    }
+    mavenCentral()
+}
+
+configurations{
+    compile
+    androidannotations.extendsFrom(compile)
+}
+
+task checkAnnotationsDirectory{
+    if (!aptOutput.exists()){
+        println 'src_annotations directory does not exist, creating'
+        aptOutput.mkdirs()
+    }
+}
+
+dependencies {
+    compile 'com.google.android:support-v4:r7'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+    compile 'org.twitter4j:twitter4j:3.0.3'
+    compile 'com.googlecode.androidannotations:androidannotations-api:2.7.1'
+    compile 'com.detroitlabs.commons:android-commons:1.0'
+    androidannotations 'com.googlecode.androidannotations:androidannotations:2.7.1'
+}
+
+afterEvaluate { project ->
+    android.applicationVariants.each { variant ->
+        variant.javaCompile.options.compilerArgs += [
+                '-classpath', configurations.compile.asPath,
+                '-processorpath', configurations.androidannotations.asPath,
+                '-processor', 'com.googlecode.androidannotations.AndroidAnnotationProcessor',
+                '-s', aptOutput,
+                '-AandroidManifestFile=' + variant.processResources.manifestFile
+        ]
+    }
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "17"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 17
+    }
+}
