@@ -40,9 +40,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/aidl" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/res" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/classes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/res" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/aidl" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/assets" isTestSource="true" />
@@ -54,7 +55,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/bundles" />
-      <excludeFolder url="file://$MODULE_DIR$/build/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/dependency-cache" />
       <excludeFolder url="file://$MODULE_DIR$/build/exploded-bundles" />
       <excludeFolder url="file://$MODULE_DIR$/build/incremental" />

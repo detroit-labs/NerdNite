@@ -44,7 +44,7 @@ public class LocationListActivity extends BaseActivity implements RestAPICallbac
 			lsa.notifyDataSetChanged();
 		}
 		else{
-			
+			//TODO: handle network errors for LocationListActivity
 		}
 	}
 }

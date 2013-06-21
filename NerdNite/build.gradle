@@ -24,12 +24,12 @@ configurations{
     androidannotations.extendsFrom(compile)
 }
 
-task checkAnnotationsDirectory{
-    if (!aptOutput.exists()){
-        println 'src_annotations directory does not exist, creating'
-        aptOutput.mkdirs()
-    }
-}
+//task checkAnnotationsDirectory{
+//    if (!aptOutput.exists()){
+//        println 'src_annotations directory does not exist, creating'
+//        aptOutput.mkdirs()
+//    }
+//}
 
 dependencies {
     compile 'com.google.android:support-v4:r7'
@@ -47,7 +47,6 @@ afterEvaluate { project ->
                 '-classpath', configurations.compile.asPath,
                 '-processorpath', configurations.androidannotations.asPath,
                 '-processor', 'com.googlecode.androidannotations.AndroidAnnotationProcessor',
-                '-s', aptOutput,
                 '-AandroidManifestFile=' + variant.processResources.manifestFile
         ]
     }
@@ -60,5 +59,11 @@ android {
     defaultConfig {
         minSdkVersion 10
         targetSdkVersion 17
+    }
+
+    sourceSets{
+        main{
+            java.srcDirs = ['src/main/java', 'src/main/assets', 'src/main/res', 'build/classes']
+        }
     }
 }
