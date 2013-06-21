@@ -34,8 +34,6 @@ public class LocationListAdapter extends ArrayAdapter<City>{
 			holder.city = (TextView)v.findViewById(R.id.city);
 			holder.state = (TextView)v.findViewById(R.id.state);
 			v.setTag(holder);
-			v.setBackgroundResource(R.drawable.selector_location_list);
-
 		}
 		
 		LocationRowHolder holder = (LocationRowHolder)v.getTag();

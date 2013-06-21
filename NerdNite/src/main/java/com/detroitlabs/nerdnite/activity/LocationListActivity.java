@@ -1,6 +1,8 @@
 package com.detroitlabs.nerdnite.activity;
 
+import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.detroitlabs.nerdnite.R;
 import com.detroitlabs.nerdnite.adapter.LocationListAdapter;
@@ -20,16 +22,19 @@ import java.util.Collections;
 public class LocationListActivity extends BaseActivity implements RestAPICallback{
 
 	@ViewById ListView locationList;
+	@ViewById ProgressBar progress;
 	
 	@Bean RestAPI api;
 	
 	@AfterViews
 	public void getLocationList(){
+		progress.setVisibility(View.VISIBLE);
 		api.getAllCities(this, 1);
 	}
 
 	@Override
 	public void handleResponse(Object response, Exception error, int requestCode){
+		progress.setVisibility(View.GONE);
 		if (response != null){
 			City[] cityListResponse = (City[])response;
 			ArrayList<City> lst = new ArrayList<City>();

@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="30dp"
-        android:layout_width="match_parent" >
+        android:layout_width="match_parent"
+        android:listSelector="@drawable/shape_transparent">
 
     </ListView>
 
@@ -37,5 +38,15 @@
         android:text="@string/select_a_location"
         android:textColor="@color/white"
         android:textSize="28sp" />
+
+    <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress"
+            android:layout_alignTop="@+id/selectALocation"
+            android:layout_alignBottom="@+id/selectALocation"
+            android:layout_toRightOf="@+id/selectALocation"
+            android:layout_marginLeft="15dp"/>
 
 </RelativeLayout>

@@ -51,7 +51,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/res" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/resources" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/src_annotations" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/build/apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/bundles" />
@@ -66,15 +65,11 @@
     </content>
     <orderEntry type="jdk" jdkName="Android 4.2.2" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="android-support-v4" level="project" />
     <orderEntry type="library" name="support-v4-r7" level="project" />
     <orderEntry type="library" name="gson-2.2.4" level="project" />
     <orderEntry type="library" name="android-commons-1.0" level="project" />
     <orderEntry type="library" name="spring-android-rest-template-1.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="spring-android-core-1.0.1.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-android-auth-1.0.1.RELEASE" level="project" />
-    <orderEntry type="library" name="twitter4j-async-3.0.3" level="project" />
-    <orderEntry type="library" name="twitter4j-core-3.0.3" level="project" />
     <orderEntry type="library" name="androidannotations-api-2.7.1" level="project" />
   </component>
 </module>
