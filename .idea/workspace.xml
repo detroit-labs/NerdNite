@@ -94,7 +94,7 @@
       <file leaf-file-name="NextEventActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/activity/NextEventActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
+            <state line="51" column="0" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.0" vertical-offset="950" max-vertical-offset="1159">
               <folding />
             </state>
           </provider>
@@ -103,25 +103,16 @@
       <file leaf-file-name="City.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/City.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="2660">
+            <state line="98" column="31" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="1843" max-vertical-offset="2679">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NerdNite/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="6" selection-start="875" selection-end="958" vertical-scroll-proportion="0.8271144" vertical-offset="0" max-vertical-offset="1862">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestAPI.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RestAPI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-28.88" vertical-offset="0" max-vertical-offset="836">
+            <state line="31" column="8" selection-start="877" selection-end="877" vertical-scroll-proportion="0.39321193" vertical-offset="0" max-vertical-offset="1208">
               <folding />
             </state>
           </provider>
@@ -130,7 +121,7 @@
       <file leaf-file-name="RestInterface.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="23" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="437">
+            <state line="15" column="23" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
               <folding />
             </state>
           </provider>
@@ -139,7 +130,7 @@
       <file leaf-file-name="Event.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Event.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="16" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+            <state line="43" column="108" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="1292">
               <folding />
             </state>
           </provider>
@@ -148,8 +139,10 @@
       <file leaf-file-name="Boss.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Boss.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="25" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-              <folding />
+            <state line="38" column="5" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1843">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,8 +150,10 @@
       <file leaf-file-name="PreviewImage.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/PreviewImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="23" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-              <folding />
+            <state line="31" column="33" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -205,7 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/NerdNite/src/main/src_annotations/com/detroitlabs/nerdnite/activity/LocationListActivity_.java" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/adapter/LocationListAdapter.java" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/activity/LocationListActivity.java" />
@@ -213,16 +207,20 @@
         <option value="$PROJECT_DIR$/NerdNite/src/main/res/color/colorlist_nn_yellow.xml" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/res/color/colorlist_nn_dark_yellow.xml" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/activity/NextEventActivity.java" />
-        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Boss.java" />
-        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/PreviewImage.java" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/City.java" />
-        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Event.java" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestInterface.java" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/res/layout/activity_location_list.xml" />
         <option value="$PROJECT_DIR$/NerdNite/src/main/res/layout/activity_next_event.xml" />
         <option value="$PROJECT_DIR$/NerdNite/build.gradle" />
+        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Boss.java" />
+        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/PreviewImage.java" />
+        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Event.java" />
+        <option value="$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestAPI.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
@@ -255,8 +253,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -364,6 +362,104 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nerdnite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nerdnite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NerdNite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nerdnite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -636,10 +732,10 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.67313915" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14677805" sideWeight="0.67313915" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32686085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -710,11 +806,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/adapter/LocationListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="57" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.68532336" vertical-offset="0" max-vertical-offset="893" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NerdNite/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="63" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
@@ -744,20 +835,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="23" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1178" selection-end="1178" vertical-scroll-proportion="-28.88" vertical-offset="0" max-vertical-offset="836">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NerdNite/src/main/res/layout/activity_next_event.xml">
       <provider editor-type-id="text-editor">
         <state line="79" column="57" selection-start="3527" selection-end="3527" vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="6327">
@@ -770,9 +847,7 @@
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/AndroidStudioPreview/compiler/nerdnite.836836ee/.generated/aapt/NerdNite-NerdNite.23ac192e/production/com/detroitlabs/nerdnite/R.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="230" selection-end="230" vertical-scroll-proportion="0.094527364" vertical-offset="0" max-vertical-offset="3439">
-          <folding />
-        </state>
+        <state line="9" column="13" selection-start="230" selection-end="230" vertical-scroll-proportion="0.094527364" vertical-offset="0" max-vertical-offset="3439" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/activity/NextEventActivity.java">
@@ -782,37 +857,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NerdNite/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="6" selection-start="875" selection-end="958" vertical-scroll-proportion="0.8271144" vertical-offset="0" max-vertical-offset="1862" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/City.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="532" max-vertical-offset="2660">
+        <state line="98" column="31" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2660">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Event.java">
+    <entry file="file://$ANDROID_HOME$/sources/android-17/android/os/Parcelable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="16" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
+        <state line="55" column="17" selection-start="1783" selection-end="1783" vertical-scroll-proportion="0.33333334" vertical-offset="511" max-vertical-offset="2394">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Boss.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="25" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-          <folding />
+        <state line="38" column="5" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1843">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/PreviewImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="23" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+        <state line="31" column="33" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/data/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="108" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="1292">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NerdNite/build.gradle">
+    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="6" selection-start="875" selection-end="958" vertical-scroll-proportion="0.8271144" vertical-offset="0" max-vertical-offset="1862">
+        <state line="15" column="23" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="56" selection-end="56" vertical-scroll-proportion="0.031456955" vertical-offset="0" max-vertical-offset="1208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NerdNite/src/main/java/com/detroitlabs/nerdnite/api/RestAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="8" selection-start="877" selection-end="877" vertical-scroll-proportion="0.39321193" vertical-offset="0" max-vertical-offset="1208">
           <folding />
         </state>
       </provider>

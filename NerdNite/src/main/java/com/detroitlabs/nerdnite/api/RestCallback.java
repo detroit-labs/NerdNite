@@ -1,6 +1,6 @@
 package com.detroitlabs.nerdnite.api;
 
-public interface RestAPICallback{
+public interface RestCallback{
 
 	public void handleResponse(Object response, Exception error, int requestCode);
 }

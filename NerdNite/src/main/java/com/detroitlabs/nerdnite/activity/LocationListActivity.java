@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.detroitlabs.nerdnite.R;
 import com.detroitlabs.nerdnite.adapter.LocationListAdapter;
 import com.detroitlabs.nerdnite.api.RestAPI;
-import com.detroitlabs.nerdnite.api.RestAPICallback;
+import com.detroitlabs.nerdnite.api.RestCallback;
 import com.detroitlabs.nerdnite.data.City;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
@@ -22,7 +22,7 @@ import java.util.Collections;
 
 
 @EActivity(R.layout.activity_location_list)
-public class LocationListActivity extends BaseActivity implements RestAPICallback{
+public class LocationListActivity extends BaseActivity implements RestCallback{
 
 	@ViewById ListView locationList;
 	@ViewById ProgressBar progress;
