@@ -13,7 +13,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageHeader"
-                android:minHeight="200dp">
+                android:minHeight="200dp"
+                android:background="#ccc">
 
             <ImageView
                     android:layout_width="wrap_content"
@@ -76,7 +77,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/locationTextContainer"
+                            android:id="@+id/locationText"
                             android:layout_marginLeft="4dp"
                             android:text="location"
                             android:textColor="@color/charcoal"/>
@@ -155,13 +156,14 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:duplicateParentState="true"
                                 android:text="@string/events"
                                 android:id="@+id/events1"
                                 android:layout_below="@+id/previous"
                                 android:layout_marginTop="3dp"
                                 android:layout_alignLeft="@+id/previous"
-                                android:textColor="@color/nn_dark_yellow"
-                                android:textSize="20sp"/>
+                                android:textSize="20sp"
+                                android:textColor="@color/colorlist_nn_dark_yellow"/>
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -192,12 +194,13 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:duplicateParentState="true"
                                 android:text="@string/events"
                                 android:id="@+id/events2"
                                 android:layout_below="@+id/upcoming"
                                 android:layout_marginTop="3dp"
                                 android:layout_alignLeft="@+id/upcoming"
-                                android:textColor="@color/nn_yellow"
+                                android:textColor="@color/colorlist_nn_yellow"
                                 android:textSize="20sp"/>
                     </RelativeLayout>
                 </LinearLayout>

@@ -37,9 +37,9 @@ public class LocationListAdapter extends ArrayAdapter<City>{
 		}
 		
 		LocationRowHolder holder = (LocationRowHolder)v.getTag();
-		holder.city.setText(getItem(position).city);
+		holder.city.setText(getItem(position).getCity());
 		fm.setFont(holder.city, NerdNiteFont.FONT_PROXIMA_NOVA_BOLD);
-		holder.state.setText(getItem(position).state);
+		holder.state.setText(getItem(position).getState());
 		fm.setFont(holder.city, NerdNiteFont.FONT_PROXIMA_NOVA_BOLD);
 		
 		return v;

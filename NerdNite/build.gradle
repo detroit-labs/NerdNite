@@ -9,36 +9,39 @@ buildscript {
 
 apply plugin: 'android'
 
-File aptOutput = file("${project.projectDir}/src/main/src_annotations")
-File aptDelete = file("${project.projectDir}/src/main/src_annotations/com")
-
 repositories{
+
+    mavenCentral()
+
     maven {
         url "http://macmini.detroitlabs.com:8081/nexus/content/repositories/thirdparty"
     }
-    mavenCentral()
 }
 
-configurations{
+ext.androidAnnotationsVersion = "2.7.1"
+
+configurations {
     compile
-    androidannotations.extendsFrom(compile)
+    apt.extendsFrom(compile)
 }
-
-//task checkAnnotationsDirectory{
-//    if (!aptOutput.exists()){
-//        println 'src_annotations directory does not exist, creating'
-//        aptOutput.mkdirs()
-//    }
-//}
 
 dependencies {
     compile 'com.google.android:support-v4:r7'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     compile 'org.twitter4j:twitter4j:3.0.3'
-    compile 'com.googlecode.androidannotations:androidannotations-api:2.7.1'
     compile 'com.detroitlabs.commons:android-commons:1.0'
-    androidannotations 'com.googlecode.androidannotations:androidannotations:2.7.1'
+    compile 'com.facebook.android:facebook-sdk-aar:3.0.0'
+    compile "com.googlecode.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
+    /*androidannotations 'com.googlecode.androidannotations:androidannotations:2.7.1'*/
+    apt "com.googlecode.androidannotations:androidannotations:${androidAnnotationsVersion}"
+}
+
+
+
+/*configurations{
+    compile
+    androidannotations.extendsFrom(compile)
 }
 
 afterEvaluate { project ->
@@ -49,6 +52,26 @@ afterEvaluate { project ->
                 '-processor', 'com.googlecode.androidannotations.AndroidAnnotationProcessor',
                 '-AandroidManifestFile=' + variant.processResources.manifestFile
         ]
+    }
+}*/
+
+
+
+
+
+afterEvaluate {
+    android.applicationVariants.each { variant ->
+        def aptOutputDir = file("${project.buildDir}/source/apt/${variant.dirName}")
+        variant.javaCompile.doFirst {
+            aptOutputDir.mkdirs()
+            variant.javaCompile.options.compilerArgs += [
+                    '-classpath', configurations.compile.asPath,
+                    '-processorpath', configurations.apt.getAsPath(),
+                    '-processor', 'com.googlecode.androidannotations.AndroidAnnotationProcessor',
+                    '-AandroidManifestFile=' + variant.processResources.manifestFile,
+                    '-s', aptOutputDir
+            ]
+        }
     }
 }
 
@@ -63,7 +86,7 @@ android {
 
     sourceSets{
         main{
-            java.srcDirs = ['src/main/java', 'src/main/assets', 'src/main/res', 'build/classes']
+            java.srcDirs = ['src/main/java', 'src/main/assets', 'src/main/res', 'build/source/apt']
         }
     }
 }

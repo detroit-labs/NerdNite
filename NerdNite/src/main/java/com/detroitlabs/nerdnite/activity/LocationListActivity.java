@@ -1,8 +1,11 @@
 package com.detroitlabs.nerdnite.activity;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.detroitlabs.nerdnite.R;
 import com.detroitlabs.nerdnite.adapter.LocationListAdapter;
@@ -25,6 +28,20 @@ public class LocationListActivity extends BaseActivity implements RestAPICallbac
 	@ViewById ProgressBar progress;
 	
 	@Bean RestAPI api;
+
+	@AfterViews
+	public void init(){
+		locationList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id){
+				Toast.makeText(LocationListActivity.this, "ITEM SELECTED", Toast.LENGTH_SHORT).show();
+				City city = (City)adapterView.getItemAtPosition(pos);
+				Intent nextEventIntent = new Intent(LocationListActivity.this, NextEventActivity_.class);
+				nextEventIntent.putExtra(City.EXTRA_CITY, city);
+				startActivity(nextEventIntent);
+			}
+		});
+	}
 	
 	@AfterViews
 	public void getLocationList(){
