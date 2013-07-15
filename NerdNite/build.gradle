@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.4.2'
+        classpath 'com.android.tools.build:gradle:0.5.0'
     }
 }
 
@@ -30,7 +30,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     compile 'org.twitter4j:twitter4j:3.0.3'
-    compile 'com.detroitlabs.commons:android-commons:1.0'
+    compile 'com.detroitlabs.commons:android-commons:1.0.1'
     compile 'com.facebook.android:facebook-sdk-aar:3.0.0'
     compile "com.googlecode.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
     /*androidannotations 'com.googlecode.androidannotations:androidannotations:2.7.1'*/

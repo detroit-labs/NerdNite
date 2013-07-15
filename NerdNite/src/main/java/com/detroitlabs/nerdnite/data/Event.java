@@ -10,6 +10,8 @@ import java.util.ArrayList;
  */
 public class Event extends City implements Parcelable{
 
+	public static final String EXTRA_EVENT = "event";
+
 	public Event(){
 		super();
 	}
@@ -41,12 +43,14 @@ public class Event extends City implements Parcelable{
 		}
 
 		public Event(Parcel in){
+			super(in);
 			preview_images = (ArrayList<PreviewImage>)in.readArrayList(PreviewImage.class.getClassLoader());
 			bosses = (ArrayList<Boss>)in.readArrayList(Boss.class.getClassLoader());
 		}
 
 		@Override
 		public void writeToParcel(Parcel dest, int flags) {
+			super.writeToParcel(dest, flags);
 			dest.writeList(preview_images);
 			dest.writeList(bosses);
 		}

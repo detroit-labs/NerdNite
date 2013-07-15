@@ -95,19 +95,19 @@ public class City implements Parcelable{
 		public int describeContents() {
 			return 0;
 		}
-		
-		public City(Parcel in){
-			id = in.readInt();
-			city = in.readString();
-			state = in.readString();
-			description = in.readString();
-			twitter = in.readString();
-			facebook = in.readString();
-			hashtag = in.readString();
-			banner_image = in.readString();
-			year_est = in.readString();
-		}
-	
+
+	public City(Parcel in){
+		id = in.readInt();
+		city = in.readString();
+		state = in.readString();
+		description = in.readString();
+		twitter = in.readString();
+		facebook = in.readString();
+		hashtag = in.readString();
+		banner_image = in.readString();
+		year_est = in.readString();
+	}
+
 		@Override
 		public void writeToParcel(Parcel dest, int flags) {
 			dest.writeInt(id);

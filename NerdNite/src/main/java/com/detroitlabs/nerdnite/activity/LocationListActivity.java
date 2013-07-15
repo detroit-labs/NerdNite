@@ -5,13 +5,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.detroitlabs.nerdnite.R;
 import com.detroitlabs.nerdnite.adapter.LocationListAdapter;
 import com.detroitlabs.nerdnite.api.RestAPI;
 import com.detroitlabs.nerdnite.api.RestCallback;
 import com.detroitlabs.nerdnite.data.City;
+import com.detroitlabs.nerdnite.data.Event;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -24,6 +24,9 @@ import java.util.Collections;
 @EActivity(R.layout.activity_location_list)
 public class LocationListActivity extends BaseActivity implements RestCallback{
 
+	public static final int RC_ALL_CITIES = 0x1;
+	public static final int RC_EVENT = 0x2;
+
 	@ViewById ListView locationList;
 	@ViewById ProgressBar progress;
 	
@@ -34,11 +37,9 @@ public class LocationListActivity extends BaseActivity implements RestCallback{
 		locationList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id){
-				Toast.makeText(LocationListActivity.this, "ITEM SELECTED", Toast.LENGTH_SHORT).show();
 				City city = (City)adapterView.getItemAtPosition(pos);
-				Intent nextEventIntent = new Intent(LocationListActivity.this, NextEventActivity_.class);
-				nextEventIntent.putExtra(City.EXTRA_CITY, city);
-				startActivity(nextEventIntent);
+				api.getEvent(city.getId(), LocationListActivity.this, RC_EVENT);
+				progress.setVisibility(View.VISIBLE);
 			}
 		});
 	}
@@ -53,15 +54,29 @@ public class LocationListActivity extends BaseActivity implements RestCallback{
 	public void handleResponse(Object response, Exception error, int requestCode){
 		progress.setVisibility(View.GONE);
 		if (response != null){
-			City[] cityListResponse = (City[])response;
-			ArrayList<City> lst = new ArrayList<City>();
-			Collections.addAll(lst, cityListResponse);
-			LocationListAdapter lsa = new LocationListAdapter(this, 0, lst);
-			locationList.setAdapter(lsa);
-			lsa.notifyDataSetChanged();
+			handleValidResponse(response, requestCode);
 		}
 		else{
 			//TODO: handle network errors for LocationListActivity
+		}
+	}
+
+	private void handleValidResponse(Object response, int requestCode){
+		switch (requestCode){
+			case RC_ALL_CITIES:
+				City[] cityListResponse = (City[])response;
+				ArrayList<City> lst = new ArrayList<City>();
+				Collections.addAll(lst, cityListResponse);
+				LocationListAdapter lsa = new LocationListAdapter(this, 0, lst);
+				locationList.setAdapter(lsa);
+				lsa.notifyDataSetChanged();
+				break;
+			case RC_EVENT:
+				Event event = (Event)response;
+				Intent nextEventIntent = new Intent(LocationListActivity.this, NextEventActivity_.class);
+				nextEventIntent.putExtra(Event.EXTRA_EVENT, event);
+				startActivity(nextEventIntent);
+				break;
 		}
 	}
 }

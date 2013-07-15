@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.detroitlabs.nerdnite.view.ImageHeaderScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/mainScrollView"
             android:fillViewport="true">
 
     <RelativeLayout
@@ -11,16 +12,29 @@
 
         <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageHeader"
+                android:layout_height="200dp"
                 android:minHeight="200dp"
+                android:id="@+id/imageHeader"
                 android:background="#ccc">
 
             <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/titleImage"
+                    android:src="@drawable/annarbor"
+                    android:scaleType="centerCrop"/>
+
+            <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/titleImage"
-                    android:scaleType="centerCrop"/>
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:id="@+id/yellowOverlay"
+                    android:background="@color/nn_yellow_overlay">
+            </FrameLayout>
 
             <TextView
                     android:layout_width="wrap_content"
@@ -29,11 +43,12 @@
                     android:id="@+id/headerTitle"
                     android:layout_centerInParent="true"
                     android:background="@drawable/shape_title_square"/>
+
         </RelativeLayout>
 
         <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_below="@+id/imageHeader"
                 android:background="#fff"
                 android:id="@+id/body"
@@ -324,5 +339,6 @@
                     android:textSize="18sp"/>
 
         </RelativeLayout>
+
     </RelativeLayout>
-</ScrollView>
+</com.detroitlabs.nerdnite.view.ImageHeaderScrollView>
