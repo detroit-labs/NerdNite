@@ -12,6 +12,8 @@ import com.detroitlabs.commons.views.ObservableScrollView;
  */
 public class ImageHeaderScrollView extends ObservableScrollView{
 
+	private int deltaX = 0, deltaY = 0;
+
 	public interface OverScrollObserver{
 		public void overScrolledBy(int deltaX, int deltaY);
 
@@ -45,15 +47,18 @@ public class ImageHeaderScrollView extends ObservableScrollView{
 
 	@Override
 	protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent){
-		if (observer != null)
-			observer.overScrolledBy(deltaX, deltaY);
-
+		this.deltaX = deltaX;
+		this.deltaY = deltaY;
 		return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX, maxOverScrollY, isTouchEvent);
 	}
 
 	@Override
 	public void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY){
 		Log.d("NN", "" + scrollX + ", " + scrollY);
-		super.onOverScrolled(scrollX,scrollY,clampedX,clampedY);
+
+		if (observer != null && scrollY == 0)
+			observer.overScrolledBy(deltaX, deltaY);
+
+		super.onOverScrolled(scrollX, scrollY, clampedX, clampedY);
 	}
 }

@@ -80,13 +80,7 @@ public class NextEventActivity extends BaseActivity implements ImageHeaderScroll
 	@Override
 	public void overScrolledBy(int deltaX, int deltaY){
 
-		if (params == null)
-			params = imageHeader.getLayoutParams();
-
-		if (headerHeight == -1){
-			headerHeight = imageHeader.getHeight();
-			headerWidth = imageHeader.getWidth();
-		}
+		refreshParams();
 
 		if (deltaY < 0){
 			deltaY = -deltaY;
@@ -114,18 +108,27 @@ public class NextEventActivity extends BaseActivity implements ImageHeaderScroll
 			params.height = stretchedHeight;//(int)(2 * stretchRatio);
 
 			imageHeader.setLayoutParams(params);
+			mainScrollView.invalidate();
 		}
 
 	}
 
 	@Override
 	public void onScrollingStopped(){
-		if (params == null){
-			params = imageHeader.getLayoutParams();
-		}
+		refreshParams();
 		params.height = headerHeight;
 		params.width = headerWidth;
 		imageHeader.setLayoutParams(params);
 		totalY = 0;
+	}
+
+	private void refreshParams(){
+		if (params == null)
+			params = imageHeader.getLayoutParams();
+
+		if (headerHeight == -1){
+			headerHeight = imageHeader.getHeight();
+			headerWidth = imageHeader.getWidth();
+		}
 	}
 }
