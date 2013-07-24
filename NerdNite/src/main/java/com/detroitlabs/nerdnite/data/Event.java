@@ -8,32 +8,103 @@ import java.util.ArrayList;
 /**
  * Created by jsibbold on 6/28/13.
  */
-public class Event extends City implements Parcelable{
+public class Event implements Parcelable{
 
 	public static final String EXTRA_EVENT = "event";
 
-	public Event(){
-		super();
+	private int id;
+	private String 	title = "",
+					venue_name = "",
+					address = "",
+					description = "",
+					date = "",
+					price = "",
+					tickets_link = "",
+					event_link = "";
+
+	private ArrayList<Presenter> presenters;
+
+	//Constructor
+	public Event(){}
+
+	public int getId(){
+		return id;
 	}
 
-	private ArrayList<Boss> bosses;
-
-	private ArrayList<PreviewImage> preview_images;
-
-	public ArrayList<Boss> getBosses(){
-		return bosses;
+	public void setId(int id){
+		this.id = id;
 	}
 
-	public void setBosses(ArrayList<Boss> bosses){
-		this.bosses = bosses;
+	public String getTitle(){
+		return title;
 	}
 
-	public ArrayList<PreviewImage> getPreview_images(){
-		return preview_images;
+	public void setTitle(String title){
+		this.title = title;
 	}
 
-	public void setPreview_images(ArrayList<PreviewImage> preview_images){
-		this.preview_images = preview_images;
+	public String getVenue_name(){
+		return venue_name;
+	}
+
+	public void setVenue_name(String venue_name){
+		this.venue_name = venue_name;
+	}
+
+	public String getAddress(){
+		return address;
+	}
+
+	public void setAddress(String address){
+		this.address = address;
+	}
+
+	public String getDescription(){
+		return description;
+	}
+
+	public void setDescription(String description){
+		this.description = description;
+	}
+
+	public String getDate(){
+		return date;
+	}
+
+	public void setDate(String date){
+		this.date = date;
+	}
+
+	public String getPrice(){
+		return price;
+	}
+
+	public void setPrice(String price){
+		this.price = price;
+	}
+
+	public String getTickets_link(){
+		return tickets_link;
+	}
+
+	public void setTickets_link(String tickets_link){
+		this.tickets_link = tickets_link;
+	}
+
+	public String getEvent_link(){
+		return event_link;
+	}
+
+	public void setEvent_link(String event_link){
+		this.event_link = event_link;
+	}
+
+	public ArrayList<Presenter> getPresenters(){
+		return presenters;
+	}
+
+	public void setPresenters(ArrayList<Presenter> presenters){
+		this.presenters = presenters;
 	}
 
 	/**********************PARCELABLE SECTION**************************/
@@ -43,16 +114,30 @@ public class Event extends City implements Parcelable{
 		}
 
 		public Event(Parcel in){
-			super(in);
-			preview_images = (ArrayList<PreviewImage>)in.readArrayList(PreviewImage.class.getClassLoader());
-			bosses = (ArrayList<Boss>)in.readArrayList(Boss.class.getClassLoader());
+			id = in.readInt();
+			title = in.readString();
+			venue_name = in.readString();
+			address = in.readString();
+			description = in.readString();
+			date = in.readString();
+			price = in.readString();
+			tickets_link = in.readString();
+			event_link = in.readString();
+			presenters = in.readArrayList(Presenter.class.getClassLoader());
 		}
 
 		@Override
 		public void writeToParcel(Parcel dest, int flags) {
-			super.writeToParcel(dest, flags);
-			dest.writeList(preview_images);
-			dest.writeList(bosses);
+			dest.writeInt(id);
+			dest.writeString(title);
+			dest.writeString(venue_name);
+			dest.writeString(address);
+			dest.writeString(description);
+			dest.writeString(date);
+			dest.writeString(price);
+			dest.writeString(tickets_link);
+			dest.writeString(event_link);
+			dest.writeList(presenters);
 		}
 
 		public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>(){

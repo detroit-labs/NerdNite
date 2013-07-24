@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.detroitlabs.nerdnite.view.ImageHeaderScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/mainScrollView"
-            android:fillViewport="true">
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:id="@+id/mainScrollView"
+                                                     android:fillViewport="true">
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -67,16 +67,32 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:id="@+id/topicText"
-                        android:textColor="@color/nn_yellow"
-                        android:text="#topic"/>
+                        android:textColor="@color/nn_dark_yellow"
+                        android:text="#topic"
+                        android:textSize="18sp"/>
 
-                <TextView
-                        android:layout_width="wrap_content"
+                <RelativeLayout
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/dateText"
-                        android:textColor="@color/charcoal"
-                        android:text="#date"/>
+                        android:layout_width="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:id="@+id/dateText"
+                            android:textColor="@color/charcoal"
+                            android:text="#date"
+                            android:textSize="30sp"/>
+                    <TextView
+                        android:id="@+id/dateTextSuffix"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_toRightOf="@+id/dateText"
+                        android:layout_alignTop="@+id/dateText"
+                        android:textColor="#000"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"/>
+                </RelativeLayout>
 
                 <LinearLayout
                         android:layout_width="fill_parent"
@@ -87,7 +103,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/next_event_location_at"
-                            android:id="@+id/locationAt"/>
+                            android:id="@+id/locationAt"
+                            android:textSize="20sp"/>
 
                     <TextView
                             android:layout_width="wrap_content"
@@ -95,7 +112,8 @@
                             android:id="@+id/locationText"
                             android:layout_marginLeft="4dp"
                             android:text="location"
-                            android:textColor="@color/charcoal"/>
+                            android:textColor="@color/charcoal"
+                            android:textSize="20sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -114,7 +132,8 @@
                         android:layout_weight="1"
                         android:id="@+id/speakerPics"
                         android:layout_margin="@dimen/next_event_padding"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
                 </LinearLayout>
 
                 <RelativeLayout

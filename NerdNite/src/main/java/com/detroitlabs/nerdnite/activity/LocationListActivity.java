@@ -38,7 +38,7 @@ public class LocationListActivity extends BaseActivity implements RestCallback{
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id){
 				City city = (City)adapterView.getItemAtPosition(pos);
-				api.getEvent(city.getId(), LocationListActivity.this, RC_EVENT);
+				api.getCity(city.getId(), LocationListActivity.this, RC_EVENT);
 				progress.setVisibility(View.VISIBLE);
 			}
 		});
@@ -72,9 +72,9 @@ public class LocationListActivity extends BaseActivity implements RestCallback{
 				lsa.notifyDataSetChanged();
 				break;
 			case RC_EVENT:
-				Event event = (Event)response;
+				City city = (City)response;
 				Intent nextEventIntent = new Intent(LocationListActivity.this, NextEventActivity_.class);
-				nextEventIntent.putExtra(Event.EXTRA_EVENT, event);
+				nextEventIntent.putExtra(City.EXTRA_CITY, city);
 				startActivity(nextEventIntent);
 				break;
 		}

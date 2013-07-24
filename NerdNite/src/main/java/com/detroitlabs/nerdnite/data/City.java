@@ -3,6 +3,8 @@ package com.detroitlabs.nerdnite.data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 public class City implements Parcelable{
 	public static final String EXTRA_CITY = "city";
 
@@ -16,6 +18,13 @@ public class City implements Parcelable{
 	protected String banner_image = "";
 	protected String year_est = "";
 
+	private ArrayList<Boss> bosses;
+
+	private ArrayList<PreviewImage> preview_images;
+
+	private Event next_event;
+
+	//Constructor
 	public City(){}
 
 	public int getId(){
@@ -24,6 +33,14 @@ public class City implements Parcelable{
 
 	public void setId(int id){
 		this.id = id;
+	}
+
+	public Event getNext_event(){
+		return next_event;
+	}
+
+	public void setNext_event(Event next_event){
+		this.next_event = next_event;
 	}
 
 	public String getCity(){
@@ -90,6 +107,22 @@ public class City implements Parcelable{
 		this.year_est = year_est;
 	}
 
+	public ArrayList<Boss> getBosses(){
+		return bosses;
+	}
+
+	public void setBosses(ArrayList<Boss> bosses){
+		this.bosses = bosses;
+	}
+
+	public ArrayList<PreviewImage> getPreview_images(){
+		return preview_images;
+	}
+
+	public void setPreview_images(ArrayList<PreviewImage> preview_images){
+		this.preview_images = preview_images;
+	}
+
 	/**********************PARCELABLE SECTION**************************/
 		@Override
 		public int describeContents() {
@@ -106,6 +139,9 @@ public class City implements Parcelable{
 		hashtag = in.readString();
 		banner_image = in.readString();
 		year_est = in.readString();
+		bosses = in.readArrayList(Boss.class.getClassLoader());
+		preview_images = in.readArrayList(PreviewImage.class.getClassLoader());
+		next_event = in.readParcelable(Event.class.getClassLoader());
 	}
 
 		@Override
@@ -119,13 +155,16 @@ public class City implements Parcelable{
 			dest.writeString(hashtag);
 			dest.writeString(banner_image);
 			dest.writeString(year_est);
+			dest.writeList(bosses);
+			dest.writeList(preview_images);
+			dest.writeParcelable(next_event, 0);
 		}
-		
+
 		public static final Creator<City> CREATOR = new Creator<City>(){
 			public City createFromParcel(Parcel in){
 				return new City(in);
 			}
-	
+
 			@Override
 			public City[] newArray(int size){
 				return new City[size];

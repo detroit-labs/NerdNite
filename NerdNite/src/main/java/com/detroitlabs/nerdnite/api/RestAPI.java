@@ -1,7 +1,6 @@
 package com.detroitlabs.nerdnite.api;
 
 import com.detroitlabs.nerdnite.data.City;
-import com.detroitlabs.nerdnite.data.Event;
 import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.EBean;
 import com.googlecode.androidannotations.annotations.UiThread;
@@ -29,9 +28,9 @@ public class RestAPI{
 	}
 
 	@Background
-	public void getEvent(final int cityId, final RestCallback callback, final int requestCode){
+	public void getCity(final int cityId, final RestCallback callback, final int requestCode){
 		try{
-			Event response = ri.getEvent(cityId);
+			City response = ri.getCity(cityId);
 			sendResponse(response, requestCode, callback);
 		}
 		catch(HttpClientErrorException e){

@@ -1,7 +1,6 @@
 package com.detroitlabs.nerdnite.api;
 
 import com.detroitlabs.nerdnite.data.City;
-import com.detroitlabs.nerdnite.data.Event;
 import com.googlecode.androidannotations.annotations.rest.Get;
 import com.googlecode.androidannotations.annotations.rest.Rest;
 
@@ -13,5 +12,5 @@ public interface RestInterface{
 	City[] getCities();
 
 	@Get("/cities/{eventID}")
-	Event getEvent(int eventID);
+	City getCity(int eventID);
 }
