@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.NextEventActivity_"/>
+        <activity android:name=".activity.MainEventActivity_"/>
         <activity android:name=".activity.LocationListActivity_" >
         </activity>
     </application>

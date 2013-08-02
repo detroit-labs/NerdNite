@@ -13,6 +13,30 @@ public class PreviewImage implements Parcelable{
 
 	private String link = "";
 
+	public int getId(){
+		return id;
+	}
+
+	public void setId(int id){
+		this.id = id;
+	}
+
+	public int getCity_id(){
+		return city_id;
+	}
+
+	public void setCity_id(int city_id){
+		this.city_id = city_id;
+	}
+
+	public String getLink(){
+		return link;
+	}
+
+	public void setLink(String link){
+		this.link = link;
+	}
+
 	/**********************PARCELABLE SECTION**************************/
 		@Override
 		public int describeContents() {

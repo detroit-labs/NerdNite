@@ -33,7 +33,9 @@ dependencies {
     compile 'com.detroitlabs.commons:android-commons:1.0.1'
     compile 'com.facebook.android:facebook-sdk-aar:3.0.0'
     compile "com.googlecode.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
-    compile "com.android.volley:volley:1.0"
+    compile 'com.android.volley:volley:1.0'
+    compile 'com.squareup.picasso:picasso:1.1.1'
+    compile 'com.google.android.gms:play-services:3.1.36'
     apt "com.googlecode.androidannotations:androidannotations:${androidAnnotationsVersion}"
 }
 
@@ -50,7 +52,7 @@ afterEvaluate {
                     '-classpath', configurations.compile.asPath,
                     '-processorpath', configurations.apt.getAsPath(),
                     '-processor', 'com.googlecode.androidannotations.AndroidAnnotationProcessor',
-                    '-AandroidManifestFile=' + variant.processResources.manifestFile,
+                    '-AandroidManifestFile=' + variant.processResources.manifestFile
                     //'-s', aptOutputDir
             ]
         }
@@ -68,7 +70,7 @@ android {
 
     sourceSets{
         main{
-            java.srcDirs = ['src/main/java', 'src/main/assets', 'src/main/res', 'build/classes']
+            java.srcDirs = ['build/classes', 'src/main/java', 'src/main/assets', 'src/main/res']
         }
     }
 }

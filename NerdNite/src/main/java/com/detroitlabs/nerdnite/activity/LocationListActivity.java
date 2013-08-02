@@ -73,7 +73,7 @@ public class LocationListActivity extends BaseActivity implements RestCallback{
 				break;
 			case RC_EVENT:
 				City city = (City)response;
-				Intent nextEventIntent = new Intent(LocationListActivity.this, NextEventActivity_.class);
+				Intent nextEventIntent = new Intent(LocationListActivity.this, MainEventActivity_.class);
 				nextEventIntent.putExtra(City.EXTRA_CITY, city);
 				startActivity(nextEventIntent);
 				break;
