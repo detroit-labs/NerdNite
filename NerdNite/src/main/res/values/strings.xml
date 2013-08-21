@@ -6,6 +6,17 @@
 
     <string name="be_there">BE THERE AND BE SQUARE</string>
 
-    <string name="select_a_location">Select a Location</string><string name="next_event_string">NEXT EVENT</string><string name="next_event_location_at">AT</string><string name="learn_more">LEARN MORE</string><string name="previous">PREVIOUS</string><string name="events">EVENTS</string><string name="upcoming">UPCOMING</string><string name="est">est.</string><string name="meet_the_bosses">MEET THE BOSSES</string>
+    <string name="select_a_location">Select a Location</string>
+    <string name="next_event_string">NEXT EVENT</string>
+    <string name="next_event_location_at">AT</string>
+    <string name="learn_more">LEARN MORE</string>
+    <string name="previous">PREVIOUS</string>
+    <string name="events">EVENTS</string>
+    <string name="upcoming">UPCOMING</string>
+    <string name="est">est.</string>
+    <string name="meet_the_bosses">MEET THE BOSSES</string>
+    <string name="was">WAS</string>
+    <string name="vote_up">vote up your favorite talk</string>
+    <string name="view_pics">view the pics</string>
 
 </resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/previous_events_bg_grey"
+                android:padding="10dp">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/topTitleContainer"
+            android:layout_alignParentTop="true">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/topicText"
+                android:textSize="18sp"
+                android:textColor="@color/nn_dark_yellow"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/was"
+                android:id="@+id/was"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/middleTitleContainer"
+            android:layout_below="@+id/topTitleContainer"
+            >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dateText"
+                android:textSize="28sp"
+                android:textColor="#fff"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dateSuffix"
+                android:textSize="22sp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="start"
+                android:textColor="#fff"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomTitleContainer"
+            android:layout_below="@+id/middleTitleContainer">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/locationText"
+                android:textSize="20sp"
+                android:textColor="@color/grey"
+                android:textAllCaps="true"/>
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"
+            android:layout_below="@+id/bottomTitleContainer"
+            android:textSize="12sp"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/voteUpButton"
+            android:clickable="true"
+            android:layout_below="@+id/description"
+            android:layout_marginTop="15dp"
+            android:background="@color/nn_yellow"
+            android:padding="15dp">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:text="@string/vote_up"
+                android:id="@+id/voteUpText"
+                android:layout_marginTop="3dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:autoText="false"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewPicsButton"
+            android:clickable="true"
+            android:layout_below="@+id/voteUpButton"
+            android:layout_marginTop="15dp"
+            android:background="@color/nn_yellow"
+            android:padding="15dp">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:text="@string/view_pics"
+                android:id="@+id/viewPicsText"
+                android:layout_marginTop="3dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:autoText="false"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -4,7 +4,7 @@
     package="com.detroitlabs.nerdnite" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -17,14 +17,13 @@
         <activity android:name=".activity.SplashActivity_" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.NextEventActivity_"/>
         <activity android:name=".activity.MainEventActivity_"/>
-        <activity android:name=".activity.LocationListActivity_" >
-        </activity>
+        <activity android:name=".activity.LocationListActivity_" />
+        <activity android:name=".activity.PastEventsActivity_" />
     </application>
 
 </manifest>

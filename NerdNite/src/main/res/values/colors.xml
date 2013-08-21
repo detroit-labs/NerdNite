@@ -9,4 +9,5 @@
     <color name="charcoal">#363636</color>
     <color name="charcoal_light">#777</color>
     <color name="nn_brown">#3D2918</color>
+    <color name="previous_events_bg_grey">#2E2E2E</color>
 </resources>

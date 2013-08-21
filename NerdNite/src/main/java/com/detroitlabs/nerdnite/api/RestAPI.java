@@ -1,6 +1,7 @@
 package com.detroitlabs.nerdnite.api;
 
 import com.detroitlabs.nerdnite.data.City;
+import com.detroitlabs.nerdnite.data.Event;
 import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.EBean;
 import com.googlecode.androidannotations.annotations.UiThread;
@@ -31,6 +32,20 @@ public class RestAPI{
 	public void getCity(final int cityId, final RestCallback callback, final int requestCode){
 		try{
 			City response = ri.getCity(cityId);
+			sendResponse(response, requestCode, callback);
+		}
+		catch(HttpClientErrorException e){
+			sendError(e, requestCode, callback);
+		}
+		catch(Exception e){
+			sendError(e, requestCode, callback);
+		}
+	}
+
+	@Background
+	public void getPreviousEvents(final int cityId, final RestCallback callback, final int requestCode){
+		try{
+			Event[] response = ri.getPastEvents(cityId);
 			sendResponse(response, requestCode, callback);
 		}
 		catch(HttpClientErrorException e){

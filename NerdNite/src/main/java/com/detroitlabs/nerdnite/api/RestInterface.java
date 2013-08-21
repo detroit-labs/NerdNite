@@ -1,6 +1,7 @@
 package com.detroitlabs.nerdnite.api;
 
 import com.detroitlabs.nerdnite.data.City;
+import com.detroitlabs.nerdnite.data.Event;
 import com.googlecode.androidannotations.annotations.rest.Get;
 import com.googlecode.androidannotations.annotations.rest.Rest;
 
@@ -13,4 +14,7 @@ public interface RestInterface{
 
 	@Get("/cities/{eventID}")
 	City getCity(int eventID);
+
+	@Get("/past-events/{cityId}")
+	Event[] getPastEvents(int cityId);
 }

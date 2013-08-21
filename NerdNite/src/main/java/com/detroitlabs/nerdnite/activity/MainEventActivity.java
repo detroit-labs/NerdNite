@@ -2,10 +2,13 @@ package com.detroitlabs.nerdnite.activity;
 
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,6 +31,7 @@ import com.detroitlabs.nerdnite.view.UserPic;
 import com.googlecode.androidannotations.annotations.AfterInject;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Bean;
+import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.Extra;
 import com.googlecode.androidannotations.annotations.ViewById;
@@ -183,6 +187,13 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 		Picasso.with(this).load(city.getBanner_image()).into(cityImage);
 	}
 
+	@Click(R.id.previousEventsButton)
+	public void onPastEventsClicked(View v){
+		Intent intent = new Intent(this, PastEventsActivity_.class);
+		intent.putExtra(City.EXTRA_CITY, city);
+		startActivity(intent);
+	}
+
 
 
 	/*************************/
@@ -257,6 +268,7 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 	/*egg 1*/
 	private int tapCount = 0;
 	private long lastTap = 0;
+	private int startOffset = 0;
 	private boolean inRetroMode = false;
 
 	private static final int TAP_THRESHOLD_TIME = 1500;
@@ -276,12 +288,23 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 					tapCount++;
 
 					if (tapCount == TAP_REQUIREMENT){
+						/*set retro mode!*/
 						if (!inRetroMode){
 							changeTextViews(v.getRootView(), new TextViewAction(){
 								@Override
 								public void changeTextView(TextView tv){
 									fm.setFont(tv, FontManager.NerdNiteFont.FONT_KONG);
 									tv.setTextScaleX(0.7f);
+									if (tv.getAnimation() == null){
+										Log.e("NN", "SETTING ANIMATION");
+										ScaleAnimation scaleAnimation = new ScaleAnimation(0f, 1f, 0f, 1f, .5f, .5f);
+										scaleAnimation.setDuration(200);
+										scaleAnimation.setStartOffset(startOffset);
+										scaleAnimation.setInterpolator(new OvershootInterpolator(1.5f));
+										startOffset += 20;
+										tv.setAnimation(scaleAnimation);
+									}
+									tv.animate();
 								}
 							});
 
@@ -289,12 +312,14 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 							inRetroMode = true;
 							resetCount();
 						}
+						/*reset to normal*/
 						else{
 							changeTextViews(v.getRootView(), new TextViewAction(){
 								@Override
 								public void changeTextView(TextView tv){
 									fm.setFont(tv, (String)tv.getTag());
 									tv.setTextScaleX(1f);
+									startOffset = 0;
 								}
 							});
 							inRetroMode = false;

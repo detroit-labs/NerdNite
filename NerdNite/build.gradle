@@ -26,16 +26,20 @@ configurations {
 }
 
 dependencies {
-    compile 'com.google.android:support-v4:r7'
+    compile 'android.support:compatibility-v13:13'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     compile 'org.twitter4j:twitter4j:3.0.3'
     compile 'com.detroitlabs.commons:android-commons:1.0.1'
-    compile 'com.facebook.android:facebook-sdk-aar:3.0.0'
+    compile ('com.facebook.android:facebook-sdk-aar:3.0.0'){
+        exclude module: 'support-v4'
+    }
     compile "com.googlecode.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
     compile 'com.android.volley:volley:1.0'
     compile 'com.squareup.picasso:picasso:1.1.1'
-    compile 'com.google.android.gms:play-services:3.1.36'
+    compile ('com.google.android.gms:play-services:3.1.36'){
+        exclude module: 'support-v4'
+    }
     apt "com.googlecode.androidannotations:androidannotations:${androidAnnotationsVersion}"
 }
 
