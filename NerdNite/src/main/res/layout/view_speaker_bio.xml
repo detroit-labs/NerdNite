@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/speakerName"
+            android:textColor="@color/nn_dark_yellow"/>
+
+    <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/speakerImage"
+            android:layout_below="@+id/speakerName"
+            android:layout_marginTop="25dp"
+            android:scaleType="centerInside"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/talkDetails"
+            android:layout_toRightOf="@+id/speakerImage"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/speakerName"
+            android:gravity="left"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/aboutSpeakerTitle"
+            android:textColor="@color/nn_dark_yellow"
+            android:layout_alignLeft="@+id/talkDetails"
+            android:layout_below="@+id/talkDetails"
+            android:layout_marginTop="10dp"
+            android:gravity="left"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/aboutSpeakerDetails"
+            android:layout_alignLeft="@+id/talkDetails"
+            android:layout_below="@+id/aboutSpeakerTitle"
+            android:gravity="left"/>
+</merge>

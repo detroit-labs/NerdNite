@@ -23,7 +23,7 @@ public class PastEventFragment extends Fragment{
 	private boolean isLastFragment = false;
 	private int rightPadding = 0;
 
-	@ViewById TextView topicText, was, dateText, dateSuffix, locationText, description, voteUpText, viewPicsText;
+	@ViewById TextView topicText, dateText, dateSuffix, locationText, description, voteUpText, viewPicsText;
 
 	@ViewById RelativeLayout voteUpButton, viewPicsButton;
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventTitleContainer"
+        android:paddingLeft="@dimen/next_event_padding"
+        android:paddingRight="@dimen/next_event_padding">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/topicText"
+            android:textColor="@color/nn_dark_yellow"
+            android:text="#topic"
+            android:textSize="18sp"
+            android:layout_alignParentTop="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/dateText"
+            android:textColor="@color/charcoal"
+            android:text="#date"
+            android:textSize="30sp"
+            android:layout_below="@+id/topicText"/>
+
+    <TextView
+            android:id="@+id/dateTextSuffix"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/dateText"
+            android:layout_alignTop="@+id/dateText"
+            android:textColor="#000"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_event_location_at"
+            android:id="@+id/locationAt"
+            android:textSize="20sp"
+            android:layout_below="@+id/dateText"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationText"
+            android:layout_marginLeft="4dp"
+            android:text="location"
+            android:textColor="@color/charcoal"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/locationAt"
+            android:layout_toRightOf="@+id/locationAt"/>
+
+</RelativeLayout>

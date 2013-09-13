@@ -4,29 +4,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/previous_events_bg_grey">
-    <LinearLayout
+    <include
         android:id="@+id/actionBar"
         android:layout_height="48dp"
         android:layout_width="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        layout="@layout/view_action_bar"/>
 
-    </LinearLayout>
-    <RelativeLayout
-        android:id="@+id/indicator"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-      <LinearLayout
-          android:id="@+id/indicatorDots"
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:gravity="center"
-          android:layout_centerInParent="true"
-          android:orientation="horizontal"/>
-    </RelativeLayout>
+    <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="com.detroitlabs.nerdnite.view.PreviousEventsPagerIndicator"
+            android:id="@+id/pagerIndicator"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/actionBar"/>
+
     <android.support.v4.view.ViewPager
             android:id="@+id/eventPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/actionBar"/>
+            android:layout_below="@+id/pagerIndicator"/>
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignTop="@+id/eventPager"
+            android:layout_alignBottom="@+id/eventPager"
+            android:layout_alignRight="@+id/eventPager"
+            android:id="@+id/viewPagerCover"
+            android:background="#CC000000">
+    </FrameLayout>
 
 </RelativeLayout>

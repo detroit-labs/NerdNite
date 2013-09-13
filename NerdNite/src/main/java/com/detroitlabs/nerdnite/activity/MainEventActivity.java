@@ -3,6 +3,7 @@ package com.detroitlabs.nerdnite.activity;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -98,10 +99,28 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 
 	private ViewGroup.LayoutParams params;
 
+	private MediaPlayer mpFireball, mpMushroom, mpReset;
+
 	@AfterInject
 	public void initData(){
 		nextEvent = city.getNext_event();
 		dateString = DateMaker.getDateString(nextEvent.getDate());
+	}
+
+	@Override
+	public void onResume(){
+		super.onResume();
+		mpFireball = MediaPlayer.create(MainEventActivity.this, R.raw.smb_fireball);
+		mpReset = MediaPlayer.create(MainEventActivity.this, R.raw.smb_powerup_appears);
+		mpMushroom = MediaPlayer.create(MainEventActivity.this, R.raw.smb_powerup);
+	}
+
+	@Override
+	public void onPause(){
+		super.onPause();
+		mpFireball.release();
+		mpReset.release();
+		mpMushroom.release();
 	}
 
 	@AfterViews
@@ -191,6 +210,13 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 	public void onPastEventsClicked(View v){
 		Intent intent = new Intent(this, PastEventsActivity_.class);
 		intent.putExtra(City.EXTRA_CITY, city);
+		startActivity(intent);
+	}
+
+	@Click(R.id.learnMore)
+	public void onLearnMoreClick(View v){
+		Intent intent = new Intent(this, EventDetailsActivity_.class);
+		intent.putExtra(Event.EXTRA_EVENT, city.getNext_event());
 		startActivity(intent);
 	}
 
@@ -309,6 +335,7 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 							});
 
 							Toast.makeText(MainEventActivity.this, "NERD MODE ACTIVATED", Toast.LENGTH_SHORT).show();
+							mpMushroom.start();
 							inRetroMode = true;
 							resetCount();
 						}
@@ -324,8 +351,12 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 							});
 							inRetroMode = false;
 							resetCount();
+							mpFireball.start();
 						}
 					}
+					/*else{
+						mpFireball.start();
+					}*/
 				}
 				return false;
 			}
@@ -348,22 +379,3 @@ public class MainEventActivity extends BaseActivity implements ImageHeaderScroll
 	}
 	/*egg 1*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".EventDetailsActivity"
+            android:fillViewport="true"
+            android:background="#fff">
+    <fragment
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/mapFragment"
+            android:layout_alignParentTop="true"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:background="#fff"
+            android:layout_below="@+id/mapFragment">
+    <RelativeLayout
+            android:id="@+id/scrollRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/view_event_title"
+                android:layout_alignParentTop="true"
+                android:id="@+id/title"
+                android:layout_marginTop="5dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/address"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="@dimen/next_event_padding"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ticketsContainer"
+                android:layout_below="@+id/address"
+                android:layout_marginTop="5dp"
+                android:clipToPadding="false"
+                android:clipChildren="false">
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buy_tickets"
+                    android:id="@+id/buyTicketsButton"
+                    android:background="#000"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/nn_yellow"
+                    android:drawableLeft="@drawable/arrow"
+                    android:drawablePadding="3dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DOORS AT 7PM / $5 COVER"
+                    android:id="@+id/ticketCostText"
+                    android:gravity="center"
+                    android:layout_toLeftOf="@+id/buyTicketsButton"
+                    android:layout_alignTop="@+id/buyTicketsButton"
+                    android:layout_alignBottom="@+id/buyTicketsButton"
+                    android:background="@color/nn_dark_yellow"
+                    android:textColor="#fff"
+                    android:singleLine="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/ticketsContainer"
+                android:id="@+id/presenterContainer">
+        </LinearLayout>
+    </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:id="@+id/rsvpContainer"
+            android:layout_below="@+id/mapFragment"
+            android:layout_marginTop="-24dp">
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/nn_dark_yellow"
+                android:layout_centerInParent="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/rsvpButton"
+                android:background="@drawable/fb_rsvp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/next_event_padding"/>
+    </RelativeLayout>
+
+</RelativeLayout>
