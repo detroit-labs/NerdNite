@@ -2,8 +2,8 @@ package com.detroitlabs.nerdnite.api;
 
 import com.detroitlabs.nerdnite.data.City;
 import com.detroitlabs.nerdnite.data.Event;
-import com.googlecode.androidannotations.annotations.rest.Get;
-import com.googlecode.androidannotations.annotations.rest.Rest;
+import org.androidannotations.annotations.rest.Get;
+import org.androidannotations.annotations.rest.Rest;
 
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
 

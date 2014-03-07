@@ -11,11 +11,10 @@ import com.detroitlabs.nerdnite.adapter.LocationListAdapter;
 import com.detroitlabs.nerdnite.api.RestAPI;
 import com.detroitlabs.nerdnite.api.RestCallback;
 import com.detroitlabs.nerdnite.data.City;
-import com.detroitlabs.nerdnite.data.Event;
-import com.googlecode.androidannotations.annotations.AfterViews;
-import com.googlecode.androidannotations.annotations.Bean;
-import com.googlecode.androidannotations.annotations.EActivity;
-import com.googlecode.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
 import java.util.Collections;

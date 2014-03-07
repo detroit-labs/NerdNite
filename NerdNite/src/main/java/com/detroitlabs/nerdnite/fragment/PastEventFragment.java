@@ -9,9 +9,10 @@ import android.widget.TextView;
 import com.detroitlabs.nerdnite.R;
 import com.detroitlabs.nerdnite.data.Event;
 import com.detroitlabs.nerdnite.ui.DateMaker;
-import com.googlecode.androidannotations.annotations.AfterViews;
-import com.googlecode.androidannotations.annotations.EFragment;
-import com.googlecode.androidannotations.annotations.ViewById;
+
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by jsibbold on 8/2/13.
@@ -21,7 +22,7 @@ public class PastEventFragment extends Fragment{
 
 	private Event event;
 	private boolean isLastFragment = false;
-	private int rightPadding = 0;
+	private int     rightPadding   = 0;
 
 	@ViewById TextView topicText, dateText, dateSuffix, locationText, description, voteUpText, viewPicsText;
 
@@ -42,7 +43,7 @@ public class PastEventFragment extends Fragment{
 	@Override
 	public void onViewCreated(View v, Bundle savedInstanceState){
 		if (isLastFragment){
-			v.setPadding(v.getPaddingLeft(), v.getPaddingTop(), rightPadding,v.getPaddingBottom());
+			v.setPadding(v.getPaddingLeft(), v.getPaddingTop(), rightPadding, v.getPaddingBottom());
 		}
 	}
 

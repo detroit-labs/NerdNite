@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.5.0'
+        classpath 'com.android.tools.build:gradle:0.7.+'
     }
 }
 
@@ -13,12 +13,13 @@ repositories{
 
     mavenCentral()
 
-    maven {
-        url "http://macmini.detroitlabs.com:8081/nexus/content/repositories/thirdparty"
-    }
+    maven { url 'http://macmini.detroitlabs.com:8081/nexus/content/repositories/thirdparty' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+
+
 }
 
-ext.androidAnnotationsVersion = "2.7.1"
+ext.androidAnnotationsVersion = "3.0"
 
 configurations {
     compile
@@ -34,47 +35,65 @@ dependencies {
     compile ('com.facebook.android:facebook-sdk-aar:3.0.0'){
         exclude module: 'support-v4'
     }
-    compile "com.googlecode.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
+    compile "org.androidannotations:androidannotations-api:${androidAnnotationsVersion}"
     compile 'com.android.volley:volley:1.0'
     compile 'com.squareup.picasso:picasso:1.1.1'
     compile ('com.google.android.gms:play-services:3.1.36'){
         exclude module: 'support-v4'
     }
-    apt "com.googlecode.androidannotations:androidannotations:${androidAnnotationsVersion}"
-}
-
-
-
-
-
-afterEvaluate {
-    android.applicationVariants.each { variant ->
-        //def aptOutputDir = file("${project.buildDir}/source/apt/${variant.dirName}")
-        variant.javaCompile.doFirst {
-            //aptOutputDir.mkdirs()
-            variant.javaCompile.options.compilerArgs += [
-                    '-classpath', configurations.compile.asPath,
-                    '-processorpath', configurations.apt.getAsPath(),
-                    '-processor', 'com.googlecode.androidannotations.AndroidAnnotationProcessor',
-                    '-AandroidManifestFile=' + variant.processResources.manifestFile
-                    //'-s', aptOutputDir
-            ]
-        }
-    }
+    apt "org.androidannotations:androidannotations:${androidAnnotationsVersion}"
 }
 
 android {
     compileSdkVersion 17
-    buildToolsVersion "17"
+    buildToolsVersion "17.0.0"
 
     defaultConfig {
         minSdkVersion 10
         targetSdkVersion 17
     }
 
+    packagingOptions{
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+    }
+
     sourceSets{
         main{
-            java.srcDirs = ['build/classes', 'src/main/java', 'src/main/assets', 'src/main/res']
+            java.srcDirs = ['src/main/apt_generated', 'src/main/java', 'src/main/assets', 'src/main/res']
         }
     }
 }
+
+/* annotations stuff */
+def getSourceSetName(variant) {
+    return new File(variant.dirName).getName();
+}
+
+android.applicationVariants.all { variant ->
+    def aptOutputDir = project.file("build/source/apt")
+    def aptOutput = new File(aptOutputDir, variant.dirName)
+    println "****************************"
+    println "variant: ${variant.name}"
+    println "manifest:  ${variant.processResources.manifestFile}"
+    println "aptOutput:  ${aptOutput}"
+    println "****************************"
+
+    android.sourceSets[getSourceSetName(variant)].java.srcDirs += aptOutput.getPath()
+
+    variant.javaCompile.options.compilerArgs += [
+            '-processorpath', configurations.apt.getAsPath(),
+            '-processor', 'org.androidannotations.AndroidAnnotationProcessor',
+            '-AandroidManifestFile=' + variant.processResources.manifestFile,
+            '-s', aptOutput
+    ]
+
+    variant.javaCompile.source = variant.javaCompile.source.filter { p ->
+        return !p.getPath().startsWith(aptOutputDir.getPath())
+    }
+
+    variant.javaCompile.doFirst {
+        aptOutput.mkdirs()
+    }
+}
+/* end of annotations stuff */

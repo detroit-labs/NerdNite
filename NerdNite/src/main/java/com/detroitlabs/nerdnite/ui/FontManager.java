@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.widget.TextView;
 
-import com.googlecode.androidannotations.annotations.EBean;
+import org.androidannotations.annotations.EBean;
 
 @EBean
 public class FontManager{

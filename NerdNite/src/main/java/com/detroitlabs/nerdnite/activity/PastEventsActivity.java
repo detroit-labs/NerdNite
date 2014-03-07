@@ -11,11 +11,11 @@ import com.detroitlabs.nerdnite.api.RestCallback;
 import com.detroitlabs.nerdnite.data.City;
 import com.detroitlabs.nerdnite.data.Event;
 import com.detroitlabs.nerdnite.view.PreviousEventsPagerIndicator;
-import com.googlecode.androidannotations.annotations.AfterViews;
-import com.googlecode.androidannotations.annotations.Bean;
-import com.googlecode.androidannotations.annotations.EActivity;
-import com.googlecode.androidannotations.annotations.Extra;
-import com.googlecode.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by jsibbold on 8/2/13.
@@ -59,7 +59,7 @@ public class PastEventsActivity extends BaseActivity implements RestCallback{
 			}
 		}
 		else{
-			//handle error
+			//todo: handle network error for past events
 		}
 	}
 

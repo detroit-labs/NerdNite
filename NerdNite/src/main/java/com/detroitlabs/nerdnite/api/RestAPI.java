@@ -2,10 +2,10 @@ package com.detroitlabs.nerdnite.api;
 
 import com.detroitlabs.nerdnite.data.City;
 import com.detroitlabs.nerdnite.data.Event;
-import com.googlecode.androidannotations.annotations.Background;
-import com.googlecode.androidannotations.annotations.EBean;
-import com.googlecode.androidannotations.annotations.UiThread;
-import com.googlecode.androidannotations.annotations.rest.RestService;
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.EBean;
+import org.androidannotations.annotations.UiThread;
+import org.androidannotations.annotations.rest.RestService;
 
 import org.springframework.web.client.HttpClientErrorException;
 

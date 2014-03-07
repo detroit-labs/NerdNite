@@ -15,7 +15,7 @@
             android:layout_height="50dp"
             android:id="@+id/speakerImage"
             android:layout_below="@+id/speakerName"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:scaleType="centerInside"/>
 
     <TextView
